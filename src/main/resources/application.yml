@@ -1,1 +1,21 @@
-spring.application.name=translator
+server:
+  port: 8081
+
+spring:
+  application:
+    name: translator
+  datasource:
+    url: jdbc:h2:mem:translatordb
+    driverClassName: org.h2.Driver
+    username: sa
+    password: password
+  h2:
+    console:
+      enabled: true
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+translator:
+  output:
+    directory: adi-output

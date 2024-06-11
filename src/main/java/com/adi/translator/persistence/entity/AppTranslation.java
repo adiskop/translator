@@ -1,6 +1,5 @@
-package com.dodlu.core.persistence.immunization.entity;
+package com.adi.translator.persistence.entity;
 
-import com.dodlu.core.persistence.base.BaseEntity;
 import jakarta.persistence.*;
 import java.util.Objects;
 import lombok.Getter;
@@ -14,27 +13,27 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 @Accessors(chain = true)
 @Entity
 @EntityListeners(AuditingEntityListener.class)
-@Table(name = "immunization_record")
+@Table(name = "app_translation")
 @Getter
 @Setter
 @ToString
 @SuperBuilder
 @RequiredArgsConstructor
-public class ImmunizationRecord extends BaseEntity {
+public class AppTranslation extends BaseEntity {
   @ManyToOne
-  @JoinColumn(name = "child_id")
-  private Child child;
+  @JoinColumn(name = "application_id")
+  private Application application;
 
   @ManyToOne
-  @JoinColumn(name = "immunization_id")
-  private Immunization immunization;
+  @JoinColumn(name = "translation_id")
+  private Translation translation;
 
   @Override
   public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;
-    ImmunizationRecord that = (ImmunizationRecord) o;
+    AppTranslation that = (AppTranslation) o;
     return id.equals(that.id);
   }
 
