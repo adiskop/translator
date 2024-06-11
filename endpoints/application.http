@@ -1,0 +1,10 @@
+### Create Application
+POST localhost:8081/api/v1/application
+Content-Type: application/json
+
+{
+  "name": "Test application one"
+}
+
+### Get all application
+GET localhost:8081/api/v1/application
